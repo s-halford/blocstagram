@@ -10,11 +10,20 @@
 		858BB3341CADD30E00D81CD0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 858BB3331CADD30E00D81CD0 /* main.m */; };
 		858BB3371CADD30E00D81CD0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 858BB3361CADD30E00D81CD0 /* AppDelegate.m */; };
 		858BB33A1CADD30E00D81CD0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 858BB3391CADD30E00D81CD0 /* ViewController.m */; };
-		858BB33D1CADD30E00D81CD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 858BB33B1CADD30E00D81CD0 /* Main.storyboard */; };
 		858BB33F1CADD30E00D81CD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 858BB33E1CADD30E00D81CD0 /* Assets.xcassets */; };
-		858BB3421CADD30E00D81CD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 858BB3401CADD30E00D81CD0 /* LaunchScreen.storyboard */; };
 		858BB34D1CADD30E00D81CD0 /* BlocstagramTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 858BB34C1CADD30E00D81CD0 /* BlocstagramTests.m */; };
 		858BB3581CADD30E00D81CD0 /* BlocstagramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 858BB3571CADD30E00D81CD0 /* BlocstagramUITests.m */; };
+		858BB3701CADD42200D81CD0 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 858BB3661CADD42200D81CD0 /* 1.jpg */; };
+		858BB3711CADD42200D81CD0 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 858BB3671CADD42200D81CD0 /* 2.jpg */; };
+		858BB3721CADD42200D81CD0 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 858BB3681CADD42200D81CD0 /* 3.jpg */; };
+		858BB3731CADD42200D81CD0 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 858BB3691CADD42200D81CD0 /* 4.jpg */; };
+		858BB3741CADD42200D81CD0 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 858BB36A1CADD42200D81CD0 /* 5.jpg */; };
+		858BB3751CADD42200D81CD0 /* 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 858BB36B1CADD42200D81CD0 /* 6.jpg */; };
+		858BB3761CADD42200D81CD0 /* 7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 858BB36C1CADD42200D81CD0 /* 7.jpg */; };
+		858BB3771CADD42200D81CD0 /* 8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 858BB36D1CADD42200D81CD0 /* 8.jpg */; };
+		858BB3781CADD42200D81CD0 /* 9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 858BB36E1CADD42200D81CD0 /* 9.jpg */; };
+		858BB3791CADD42200D81CD0 /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 858BB36F1CADD42200D81CD0 /* 10.jpg */; };
+		858BB37C1CADD49200D81CD0 /* BLCImagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 858BB37B1CADD49200D81CD0 /* BLCImagesTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,9 +50,7 @@
 		858BB3361CADD30E00D81CD0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		858BB3381CADD30E00D81CD0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		858BB3391CADD30E00D81CD0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		858BB33C1CADD30E00D81CD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		858BB33E1CADD30E00D81CD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		858BB3411CADD30E00D81CD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		858BB3431CADD30E00D81CD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		858BB3481CADD30E00D81CD0 /* BlocstagramTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlocstagramTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		858BB34C1CADD30E00D81CD0 /* BlocstagramTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlocstagramTests.m; sourceTree = "<group>"; };
@@ -51,6 +58,18 @@
 		858BB3531CADD30E00D81CD0 /* BlocstagramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlocstagramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		858BB3571CADD30E00D81CD0 /* BlocstagramUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlocstagramUITests.m; sourceTree = "<group>"; };
 		858BB3591CADD30E00D81CD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		858BB3661CADD42200D81CD0 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		858BB3671CADD42200D81CD0 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		858BB3681CADD42200D81CD0 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		858BB3691CADD42200D81CD0 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
+		858BB36A1CADD42200D81CD0 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
+		858BB36B1CADD42200D81CD0 /* 6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 6.jpg; sourceTree = "<group>"; };
+		858BB36C1CADD42200D81CD0 /* 7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 7.jpg; sourceTree = "<group>"; };
+		858BB36D1CADD42200D81CD0 /* 8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8.jpg; sourceTree = "<group>"; };
+		858BB36E1CADD42200D81CD0 /* 9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 9.jpg; sourceTree = "<group>"; };
+		858BB36F1CADD42200D81CD0 /* 10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpg; sourceTree = "<group>"; };
+		858BB37A1CADD49200D81CD0 /* BLCImagesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCImagesTableViewController.h; sourceTree = "<group>"; };
+		858BB37B1CADD49200D81CD0 /* BLCImagesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCImagesTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,13 +120,14 @@
 		858BB3311CADD30E00D81CD0 /* Blocstagram */ = {
 			isa = PBXGroup;
 			children = (
+				858BB3651CADD3E100D81CD0 /* Images */,
 				858BB3351CADD30E00D81CD0 /* AppDelegate.h */,
 				858BB3361CADD30E00D81CD0 /* AppDelegate.m */,
+				858BB37A1CADD49200D81CD0 /* BLCImagesTableViewController.h */,
+				858BB37B1CADD49200D81CD0 /* BLCImagesTableViewController.m */,
 				858BB3381CADD30E00D81CD0 /* ViewController.h */,
 				858BB3391CADD30E00D81CD0 /* ViewController.m */,
-				858BB33B1CADD30E00D81CD0 /* Main.storyboard */,
 				858BB33E1CADD30E00D81CD0 /* Assets.xcassets */,
-				858BB3401CADD30E00D81CD0 /* LaunchScreen.storyboard */,
 				858BB3431CADD30E00D81CD0 /* Info.plist */,
 				858BB3321CADD30E00D81CD0 /* Supporting Files */,
 			);
@@ -138,6 +158,23 @@
 				858BB3591CADD30E00D81CD0 /* Info.plist */,
 			);
 			path = BlocstagramUITests;
+			sourceTree = "<group>";
+		};
+		858BB3651CADD3E100D81CD0 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				858BB3661CADD42200D81CD0 /* 1.jpg */,
+				858BB3671CADD42200D81CD0 /* 2.jpg */,
+				858BB3681CADD42200D81CD0 /* 3.jpg */,
+				858BB3691CADD42200D81CD0 /* 4.jpg */,
+				858BB36A1CADD42200D81CD0 /* 5.jpg */,
+				858BB36B1CADD42200D81CD0 /* 6.jpg */,
+				858BB36C1CADD42200D81CD0 /* 7.jpg */,
+				858BB36D1CADD42200D81CD0 /* 8.jpg */,
+				858BB36E1CADD42200D81CD0 /* 9.jpg */,
+				858BB36F1CADD42200D81CD0 /* 10.jpg */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,9 +280,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				858BB3421CADD30E00D81CD0 /* LaunchScreen.storyboard in Resources */,
+				858BB3751CADD42200D81CD0 /* 6.jpg in Resources */,
+				858BB3711CADD42200D81CD0 /* 2.jpg in Resources */,
 				858BB33F1CADD30E00D81CD0 /* Assets.xcassets in Resources */,
-				858BB33D1CADD30E00D81CD0 /* Main.storyboard in Resources */,
+				858BB3791CADD42200D81CD0 /* 10.jpg in Resources */,
+				858BB3781CADD42200D81CD0 /* 9.jpg in Resources */,
+				858BB3771CADD42200D81CD0 /* 8.jpg in Resources */,
+				858BB3761CADD42200D81CD0 /* 7.jpg in Resources */,
+				858BB3701CADD42200D81CD0 /* 1.jpg in Resources */,
+				858BB3741CADD42200D81CD0 /* 5.jpg in Resources */,
+				858BB3731CADD42200D81CD0 /* 4.jpg in Resources */,
+				858BB3721CADD42200D81CD0 /* 3.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +318,7 @@
 				858BB33A1CADD30E00D81CD0 /* ViewController.m in Sources */,
 				858BB3371CADD30E00D81CD0 /* AppDelegate.m in Sources */,
 				858BB3341CADD30E00D81CD0 /* main.m in Sources */,
+				858BB37C1CADD49200D81CD0 /* BLCImagesTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,25 +352,6 @@
 			targetProxy = 858BB3541CADD30E00D81CD0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		858BB33B1CADD30E00D81CD0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				858BB33C1CADD30E00D81CD0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		858BB3401CADD30E00D81CD0 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				858BB3411CADD30E00D81CD0 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		858BB35A1CADD30E00D81CD0 /* Debug */ = {
