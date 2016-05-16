@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface BLCImagesTableViewController : UITableViewController
-@property (nonatomic, strong) NSMutableArray *images;
+@property (nonatomic, strong) NSArray *items;
 
 @end
