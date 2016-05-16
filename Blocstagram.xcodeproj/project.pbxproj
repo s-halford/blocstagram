@@ -29,6 +29,7 @@
 		85AEEE691CE803910047145E /* BLCMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 85AEEE681CE803910047145E /* BLCMedia.m */; };
 		85AEEE6C1CE8049D0047145E /* BLCComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 85AEEE6B1CE8049D0047145E /* BLCComment.m */; };
 		85AEEE6F1CE805170047145E /* BLCDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 85AEEE6E1CE805170047145E /* BLCDatasource.m */; };
+		85AEEE721CE9849F0047145E /* BLCMediaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85AEEE711CE9849F0047145E /* BLCMediaTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,8 @@
 		85AEEE6B1CE8049D0047145E /* BLCComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCComment.m; sourceTree = "<group>"; };
 		85AEEE6D1CE805170047145E /* BLCDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCDatasource.h; sourceTree = "<group>"; };
 		85AEEE6E1CE805170047145E /* BLCDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCDatasource.m; sourceTree = "<group>"; };
+		85AEEE701CE9849F0047145E /* BLCMediaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCMediaTableViewCell.h; sourceTree = "<group>"; };
+		85AEEE711CE9849F0047145E /* BLCMediaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCMediaTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +154,8 @@
 				85AEEE6B1CE8049D0047145E /* BLCComment.m */,
 				85AEEE6D1CE805170047145E /* BLCDatasource.h */,
 				85AEEE6E1CE805170047145E /* BLCDatasource.m */,
+				85AEEE701CE9849F0047145E /* BLCMediaTableViewCell.h */,
+				85AEEE711CE9849F0047145E /* BLCMediaTableViewCell.m */,
 				85AEEE641CE7D9960047145E /* BLCUser.h */,
 				85AEEE651CE7D9960047145E /* BLCUser.m */,
 			);
@@ -341,6 +346,7 @@
 			files = (
 				858BB33A1CADD30E00D81CD0 /* ViewController.m in Sources */,
 				858BB3371CADD30E00D81CD0 /* AppDelegate.m in Sources */,
+				85AEEE721CE9849F0047145E /* BLCMediaTableViewCell.m in Sources */,
 				85AEEE691CE803910047145E /* BLCMedia.m in Sources */,
 				858BB3341CADD30E00D81CD0 /* main.m in Sources */,
 				858BB37C1CADD49200D81CD0 /* BLCImagesTableViewController.m in Sources */,
