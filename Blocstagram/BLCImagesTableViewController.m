@@ -13,7 +13,6 @@
 #import "BLCComment.h"
 #import "BLCMediaTableViewCell.h"
 
-
 @interface BLCImagesTableViewController ()
 
 @end
@@ -22,10 +21,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor colorWithRed:0.90 green:0.90 blue:0.92 alpha:1.0];
    
     [[BLCDatasource sharedInstance] addObserver:self forKeyPath:@"mediaItems" options:0 context:nil];
     
     [self.tableView registerClass:[BLCMediaTableViewCell class] forCellReuseIdentifier:@"mediaCell"];
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refreshControlDidFire:) forControlEvents:UIControlEventValueChanged];
+    
+    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -43,6 +48,33 @@
 {
     [[BLCDatasource sharedInstance] removeObserver:self forKeyPath:@"mediaItems"];
 }
+
+- (void) refreshControlDidFire:(UIRefreshControl *) sender {
+    [[BLCDatasource sharedInstance] requestNewItemsWithCompletionHandler:^(NSError *error) {
+        [sender endRefreshing];
+    }];
+}
+
+- (void) infiniteScrollIfNecessary {
+    NSIndexPath *bottomIndexPath = [[self.tableView indexPathsForVisibleRows] lastObject];
+    
+    if (bottomIndexPath && bottomIndexPath.row == [BLCDatasource sharedInstance].mediaItems.count - 1) {
+        // The very last cell is on screen
+        [[BLCDatasource sharedInstance] requestOldItemsWithCompletionHandler:nil];
+    }
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self infiniteScrollIfNecessary];
+}
+
+// Reduce number of times we call infiniteScrollIfNecessary
+//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+//    [self infiniteScrollIfNecessary];
+//}
+
 
 - (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if (object == [BLCDatasource sharedInstance] && [keyPath isEqualToString:@"mediaItems"]) {
