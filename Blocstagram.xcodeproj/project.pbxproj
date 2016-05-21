@@ -30,6 +30,7 @@
 		85AEEE851CEA92B10047145E /* 8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 85AEEE7B1CEA92B10047145E /* 8.jpg */; };
 		85AEEE861CEA92B10047145E /* 9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 85AEEE7C1CEA92B10047145E /* 9.jpg */; };
 		85AEEE871CEA92B10047145E /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 85AEEE7D1CEA92B10047145E /* 10.jpg */; };
+		85AEEE8A1CEBD0F10047145E /* BLCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85AEEE891CEBD0F10047145E /* BLCLoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,8 @@
 		85AEEE7B1CEA92B10047145E /* 8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8.jpg; sourceTree = "<group>"; };
 		85AEEE7C1CEA92B10047145E /* 9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 9.jpg; sourceTree = "<group>"; };
 		85AEEE7D1CEA92B10047145E /* 10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpg; sourceTree = "<group>"; };
+		85AEEE881CEBD0F10047145E /* BLCLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCLoginViewController.h; sourceTree = "<group>"; };
+		85AEEE891CEBD0F10047145E /* BLCLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCLoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +157,8 @@
 				85AEEE6B1CE8049D0047145E /* BLCComment.m */,
 				85AEEE6D1CE805170047145E /* BLCDatasource.h */,
 				85AEEE6E1CE805170047145E /* BLCDatasource.m */,
+				85AEEE881CEBD0F10047145E /* BLCLoginViewController.h */,
+				85AEEE891CEBD0F10047145E /* BLCLoginViewController.m */,
 				85AEEE701CE9849F0047145E /* BLCMediaTableViewCell.h */,
 				85AEEE711CE9849F0047145E /* BLCMediaTableViewCell.m */,
 				85AEEE641CE7D9960047145E /* BLCUser.h */,
@@ -352,6 +357,7 @@
 				858BB37C1CADD49200D81CD0 /* BLCImagesTableViewController.m in Sources */,
 				85AEEE661CE7D9960047145E /* BLCUser.m in Sources */,
 				85AEEE6F1CE805170047145E /* BLCDatasource.m in Sources */,
+				85AEEE8A1CEBD0F10047145E /* BLCLoginViewController.m in Sources */,
 				85AEEE6C1CE8049D0047145E /* BLCComment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
