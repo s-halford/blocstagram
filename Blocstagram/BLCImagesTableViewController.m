@@ -19,6 +19,14 @@
 
 @implementation BLCImagesTableViewController
 
+-(id)initWithStyle:(UITableViewStyle)style {
+    self = [super initWithStyle:UITableViewStylePlain];
+    if(self) {
+    }
+    return self;
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithRed:0.90 green:0.90 blue:0.92 alpha:1.0];
@@ -39,47 +47,52 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (void) dealloc
 {
     [[BLCDatasource sharedInstance] removeObserver:self forKeyPath:@"mediaItems"];
 }
 
-- (void) refreshControlDidFire:(UIRefreshControl *) sender {
-    [[BLCDatasource sharedInstance] requestNewItemsWithCompletionHandler:^(NSError *error) {
-        [sender endRefreshing];
-    }];
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
-- (void) infiniteScrollIfNecessary {
-    NSIndexPath *bottomIndexPath = [[self.tableView indexPathsForVisibleRows] lastObject];
+#pragma mark - Table view data source
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [BLCDatasource sharedInstance].mediaItems.count;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (bottomIndexPath && bottomIndexPath.row == [BLCDatasource sharedInstance].mediaItems.count - 1) {
-        // The very last cell is on screen
-        [[BLCDatasource sharedInstance] requestOldItemsWithCompletionHandler:nil];
+    BLCMediaTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mediaCell" forIndexPath:indexPath];
+    cell.mediaItem = [BLCDatasource sharedInstance].mediaItems[indexPath.row];
+    return cell;
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    BLCMedia *item = [BLCDatasource sharedInstance].mediaItems[indexPath.row];
+    return [BLCMediaTableViewCell heightForMediaItem:item width:CGRectGetWidth(self.view.frame)];
+    
+}
+
+- (CGFloat) tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    BLCMedia *item = [BLCDatasource sharedInstance].mediaItems[indexPath.row];
+    if (item.image) {
+        return 350;
+    } else {
+        return 150;
     }
 }
-
-#pragma mark - UIScrollViewDelegate
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    [self infiniteScrollIfNecessary];
-}
-
-// Reduce number of times we call infiniteScrollIfNecessary
-//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-//    [self infiniteScrollIfNecessary];
-//}
-
 
 - (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if (object == [BLCDatasource sharedInstance] && [keyPath isEqualToString:@"mediaItems"]) {
         // We know mediaItems changed.  Let's see what kind of change it is.
-        int kindOfChange = [change[NSKeyValueChangeKindKey] intValue];
+        //int kindOfChange = [change[NSKeyValueChangeKindKey] intValue];
+        NSKeyValueChange kindOfChange = [change[NSKeyValueChangeKindKey] unsignedIntegerValue];
+        
         
         if (kindOfChange == NSKeyValueChangeSetting) {
             // Someone set a brand new images array
@@ -117,40 +130,6 @@
     }
 }
 
--(id)initWithStyle:(UITableViewStyle)style {
-    self = [super initWithStyle:UITableViewStylePlain];
-    if(self) {
-        self.items  = [BLCDatasource sharedInstance].mediaItems;
-    }
-    return self;
-    
-}
-
-#pragma mark - Table view data source
-
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    return [self items].count;
-}
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-
-    
-    BLCMediaTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mediaCell" forIndexPath:indexPath];
-    cell.mediaItem = [self items][indexPath.row];
-    
-    return cell;
-}
-
-- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-        
-    BLCMedia *item = [self items][indexPath.row];
-    return [BLCMediaTableViewCell heightForMediaItem:item width:CGRectGetWidth(self.view.frame)];
-
-}
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -160,6 +139,40 @@
         [[BLCDatasource sharedInstance] deleteMediaItem:item];
     }
 }
+
+
+- (void) refreshControlDidFire:(UIRefreshControl *) sender {
+    [[BLCDatasource sharedInstance] requestNewItemsWithCompletionHandler:^(NSError *error) {
+        [sender endRefreshing];
+    }];
+}
+
+- (void) infiniteScrollIfNecessary {
+    NSIndexPath *bottomIndexPath = [[self.tableView indexPathsForVisibleRows] lastObject];
+    
+    if (bottomIndexPath && bottomIndexPath.row == [BLCDatasource sharedInstance].mediaItems.count - 1) {
+        // The very last cell is on screen
+        [[BLCDatasource sharedInstance] requestOldItemsWithCompletionHandler:nil];
+    }
+}
+
+
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self infiniteScrollIfNecessary];
+}
+
+// Reduce number of times we call infiniteScrollIfNecessary
+//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+//    [self infiniteScrollIfNecessary];
+//}
+
+
+
+
+
 
 
 // Override to support conditional editing of the table view.
