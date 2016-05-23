@@ -70,8 +70,9 @@
                             [self downloadImageForMediaItem:mediaItem];
                         }
                     } else {
-                        [self populateDataWithParameters:nil completionHandler:nil];
+                        //[self populateDataWithParameters:nil completionHandler:nil];
                     }
+                    [self populateDataWithParameters:nil completionHandler:nil];
                 });
             });
         }
