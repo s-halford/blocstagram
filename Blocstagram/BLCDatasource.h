@@ -22,6 +22,7 @@ typedef void (^BLCNewItemCompletionBlock)(NSError *error);
 @property (nonatomic, strong, readonly) NSString *accessToken;
 
 - (void) deleteMediaItem:(BLCMedia *)item;
+- (void) downloadImageForMediaItem:(BLCMedia *)mediaItem;
 - (void) requestNewItemsWithCompletionHandler:(BLCNewItemCompletionBlock)completionHandler;
 - (void) requestOldItemsWithCompletionHandler:(BLCNewItemCompletionBlock)completionHandler;
 

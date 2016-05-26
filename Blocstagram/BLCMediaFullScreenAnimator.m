@@ -35,13 +35,9 @@
         
         [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
             fromViewController.view.tintAdjustmentMode = UIViewTintAdjustmentModeDimmed;
-            NSLog(@"ZOOM IN");
-            
             fullScreenVC.view.frame = endFrame;
             [fullScreenVC centerScrollView];
         } completion:^(BOOL finished) {
-            //NSLog(@"ZOOM IN");
-            //[fullScreenVC centerScrollView];
             [transitionContext completeTransition:YES];
         }];
     }
@@ -66,7 +62,6 @@
             
             toViewController.view.tintAdjustmentMode = UIViewTintAdjustmentModeAutomatic;
         } completion:^(BOOL finished) {
-            NSLog(@"ZOOM OUT");
             [transitionContext completeTransition:YES];
         }];
     }

@@ -82,6 +82,14 @@
 
 #pragma mark - BLCMediaTableViewCellDelegate
 
+- (void) cell:(BLCMediaTableViewCell *)cell didTwoFingerTapImageView:(UIImageView *)imageView {
+    [[BLCDatasource sharedInstance] downloadImageForMediaItem:cell.mediaItem];
+    
+   
+    
+    NSLog(@"2 finger tap");
+}
+
 - (void) cell:(BLCMediaTableViewCell *)cell didTapImageView:(UIImageView *)imageView {
     self.lastTappedImageView = imageView;
     
