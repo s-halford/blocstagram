@@ -24,12 +24,12 @@
     //self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[BLCImagesTableViewController alloc] init]];
     // Override point for customization after application launch.
     
-    [BLCDatasource sharedInstance]; // create the data source (so it can receive the access token notification)
+    [BLCDataSource sharedInstance]; // create the data source (so it can receive the access token notification)
     
     UINavigationController *navVC = [[UINavigationController alloc] init];
     
     
-    if (![BLCDatasource sharedInstance].accessToken) {
+    if (![BLCDataSource sharedInstance].accessToken) {
         BLCLoginViewController *loginVC = [[BLCLoginViewController alloc] init];
         [navVC setViewControllers:@[loginVC] animated:YES];
         

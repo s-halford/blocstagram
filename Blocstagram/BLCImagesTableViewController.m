@@ -36,7 +36,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithRed:0.90 green:0.90 blue:0.92 alpha:1.0];
    
-    [[BLCDatasource sharedInstance] addObserver:self forKeyPath:@"mediaItems" options:0 context:nil];
+    [[BLCDataSource sharedInstance] addObserver:self forKeyPath:@"mediaItems" options:0 context:nil];
     
     [self.tableView registerClass:[BLCMediaTableViewCell class] forCellReuseIdentifier:@"mediaCell"];
     
@@ -54,7 +54,7 @@
 
 - (void) dealloc
 {
-    [[BLCDatasource sharedInstance] removeObserver:self forKeyPath:@"mediaItems"];
+    [[BLCDataSource sharedInstance] removeObserver:self forKeyPath:@"mediaItems"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -83,7 +83,7 @@
 #pragma mark - BLCMediaTableViewCellDelegate
 
 - (void) cell:(BLCMediaTableViewCell *)cell didTwoFingerTapImageView:(UIImageView *)imageView {
-    [[BLCDatasource sharedInstance] downloadImageForMediaItem:cell.mediaItem];
+    [[BLCDataSource sharedInstance] downloadImageForMediaItem:cell.mediaItem];
     
    
     
@@ -109,7 +109,7 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [BLCDatasource sharedInstance].mediaItems.count;
+    return [BLCDataSource sharedInstance].mediaItems.count;
 }
 
 
@@ -117,25 +117,25 @@
     
     BLCMediaTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mediaCell" forIndexPath:indexPath];
     cell.delegate = self;
-    cell.mediaItem = [BLCDatasource sharedInstance].mediaItems[indexPath.row];
+    cell.mediaItem = [BLCDataSource sharedInstance].mediaItems[indexPath.row];
     return cell;
 }
 
 - (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    BLCMedia *mediaItem = [BLCDatasource sharedInstance].mediaItems[indexPath.row];
+    BLCMedia *mediaItem = [BLCDataSource sharedInstance].mediaItems[indexPath.row];
     if (mediaItem.downloadState == BLCMediaDownloadStateNeedsImage) {
-        [[BLCDatasource sharedInstance] downloadImageForMediaItem:mediaItem];
+        [[BLCDataSource sharedInstance] downloadImageForMediaItem:mediaItem];
     }
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    BLCMedia *item = [BLCDatasource sharedInstance].mediaItems[indexPath.row];
+    BLCMedia *item = [BLCDataSource sharedInstance].mediaItems[indexPath.row];
     return [BLCMediaTableViewCell heightForMediaItem:item width:CGRectGetWidth(self.view.frame)];
     
 }
 
 - (CGFloat) tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    BLCMedia *item = [BLCDatasource sharedInstance].mediaItems[indexPath.row];
+    BLCMedia *item = [BLCDataSource sharedInstance].mediaItems[indexPath.row];
     if (item.image) {
         return 350;
     } else {
@@ -144,7 +144,7 @@
 }
 
 - (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    if (object == [BLCDatasource sharedInstance] && [keyPath isEqualToString:@"mediaItems"]) {
+    if (object == [BLCDataSource sharedInstance] && [keyPath isEqualToString:@"mediaItems"]) {
         // We know mediaItems changed.  Let's see what kind of change it is.
         //int kindOfChange = [change[NSKeyValueChangeKindKey] intValue];
         NSKeyValueChange kindOfChange = [change[NSKeyValueChangeKindKey] unsignedIntegerValue];
@@ -191,14 +191,14 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        BLCMedia *item = [BLCDatasource sharedInstance].mediaItems[indexPath.row];
-        [[BLCDatasource sharedInstance] deleteMediaItem:item];
+        BLCMedia *item = [BLCDataSource sharedInstance].mediaItems[indexPath.row];
+        [[BLCDataSource sharedInstance] deleteMediaItem:item];
     }
 }
 
 
 - (void) refreshControlDidFire:(UIRefreshControl *) sender {
-    [[BLCDatasource sharedInstance] requestNewItemsWithCompletionHandler:^(NSError *error) {
+    [[BLCDataSource sharedInstance] requestNewItemsWithCompletionHandler:^(NSError *error) {
         [sender endRefreshing];
     }];
 }
@@ -206,12 +206,15 @@
 - (void) infiniteScrollIfNecessary {
     NSIndexPath *bottomIndexPath = [[self.tableView indexPathsForVisibleRows] lastObject];
     
-    if (bottomIndexPath && bottomIndexPath.row == [BLCDatasource sharedInstance].mediaItems.count - 1) {
+    if (bottomIndexPath && bottomIndexPath.row == [BLCDataSource sharedInstance].mediaItems.count - 1) {
         // The very last cell is on screen
-        [[BLCDatasource sharedInstance] requestOldItemsWithCompletionHandler:nil];
+        [[BLCDataSource sharedInstance] requestOldItemsWithCompletionHandler:nil];
     }
 }
 
+- (void) cellDidPressLikeButton:(BLCMediaTableViewCell *)cell {
+    [[BLCDataSource sharedInstance] toggleLikeOnMediaItem:cell.mediaItem];
+}
 
 
 #pragma mark - UIScrollViewDelegate

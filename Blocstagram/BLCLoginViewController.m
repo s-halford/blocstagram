@@ -19,6 +19,7 @@
 
 NSString *const BLCLoginViewControllerDidGetAccessTokenNotification = @"BLCLoginViewControllerDidGetAccessTokenNotification";
 NSString *loginPageStart = @"https://instagram.com/oauth/authorize/";
+NSString *const LoginStringFormat = @"https://instagram.com/oauth/authorize/?client_id=%@&scope=likes+comments+relationships&redirect_uri=%@&response_type=token";
 
 - (void)loadView {
     UIWebView *webView = [[UIWebView alloc] init];
@@ -37,7 +38,7 @@ NSString *loginPageStart = @"https://instagram.com/oauth/authorize/";
 }
 
 -(void)gotoLoginPage {
-    NSString *urlString = [NSString stringWithFormat:@"https://instagram.com/oauth/authorize/?client_id=%@&redirect_uri=%@&response_type=token", [BLCDatasource instagramClientID], [self redirectURI]];
+    NSString *urlString = [NSString stringWithFormat:LoginStringFormat, [BLCDataSource instagramClientID], [self redirectURI]];
     NSURL *url = [NSURL URLWithString:urlString];
     
     if (url) {

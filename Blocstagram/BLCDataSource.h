@@ -13,7 +13,7 @@
 
 typedef void (^BLCNewItemCompletionBlock)(NSError *error);
 
-@interface BLCDatasource : NSObject
+@interface BLCDataSource : NSObject
 
 + (instancetype) sharedInstance;
 + (NSString *) instagramClientID;
@@ -23,6 +23,8 @@ typedef void (^BLCNewItemCompletionBlock)(NSError *error);
 
 - (void) deleteMediaItem:(BLCMedia *)item;
 - (void) downloadImageForMediaItem:(BLCMedia *)mediaItem;
+- (void) toggleLikeOnMediaItem:(BLCMedia *)mediaItem;
+
 - (void) requestNewItemsWithCompletionHandler:(BLCNewItemCompletionBlock)completionHandler;
 - (void) requestOldItemsWithCompletionHandler:(BLCNewItemCompletionBlock)completionHandler;
 
