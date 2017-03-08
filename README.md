@@ -1,4 +1,4 @@
-# Project Title
+# SnaFoo Snack Suggestion and Voting Applicaiton
 
 One Paragraph of project description goes here
 
