@@ -1,14 +1,19 @@
 # SnaFoo Snack Suggestion and Voting Applicaiton
 
-A web application built in Python using the Django framework that allows employees at a company to suggest snacks that the Food Services department can purchase that month.  Employees can choose from a list of optional snacks or suggest their own and provide information about where to purchase the items.  Employees are limited to 1 snack per month.  Employees also use the system to vote on the snacks that have been suggested for the month.  Employees are allowed 3 votes per month.  Employees can also see a list of snacks that are always purchased by the Food Services department.  
+A web application built in Python using the Django framework that allows employees at a company to suggest snacks that the Food Services department can purchase that month.  Employees can choose from a list of optional snacks or suggest their own and provide information about where to purchase those snacks.  Employees are limited to 1 snack per month.  Employees also use the SnaFoo system to vote on snacks that have already been suggested for the month.  Employees are allowed 3 votes per month.  Employees can also see a list of snacks that are always purchased by the Food Services department as well.  
 
-## Getting Started
+## Screen Shots
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+INSERT SCREEN SHOTS
 
-### Prerequisites
+### Technical Specifications
 
-What things you need to install the software and how to install them
+SnaFoo was built using the Django Framework 1.10.4 running Python 2.7.10.  Optional and always purchased snacks are retrieved from a web service API, packaged as JSON, and parsed by the SnaFoo application.  When a user suggests a snack, either one of their own, or from a Dropdown listing optional snacks returned by the web service, the snack objects are added to a database and initialized to start voting on upon creation.  Django forms are used for suggesting snacks, and the number of snacks an employee can suggest are stored as Python cookie objects.  When a user suggests a snack, the snack item is also added to the web service via and API call formatting the data JSON encoding.  
+
+The voting page retrieves a list of always purchased snacks from the web services and allows employees to vote on snacks which have been suggested for the month.  Logic is implemented to ensure no duplicate snacks have been suggested.  When a user has suggested a snack, the snack's vote count gets updated accordingly along with the number of votes the employee has remaining.
+
+Error handling is also implemented to handle all possible failure occurences, issues such as server maintenance, and instances of when an employee is out of votes remaining or has used their alloted amount of suggestions for the month.
+
 
 ```
 Give examples
