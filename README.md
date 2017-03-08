@@ -1,6 +1,6 @@
 # SnaFoo Snack Suggestion and Voting Applicaiton
 
-One Paragraph of project description goes here
+A web application built in Python using the Django framework that allows employees at a company to suggest snacks that the Food Services department can purchase that month.  Employees can choose from a list of optional snacks or suggest their own and provide information about where to purchase the items.  Employees are limited to 1 snack per month.  Employees also use the system to vote on the snacks that have been suggested for the month.  Employees are allowed 3 votes per month.  Employees can also see a list of snacks that are always purchased by the Food Services department.  
 
 ## Getting Started
 
